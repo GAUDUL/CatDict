@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Cat Dictionary</title>
+</head>
+<body>
+  <h1>Random Cat Fact</h1>
+  <button onclick="getFact()">Get Fact</button>
+  <p id="fact"></p>
+
+  <script>
+    async function getFact() {
+      const res = await fetch('/');
+      const data = await res.json();
+      document.getElementById('fact').innerText = data.data;
+    }
+  </script>
+</body>
+</html>
+

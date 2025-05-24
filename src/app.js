@@ -12,6 +12,8 @@ const {
 
 const app = express();
 
+app.use(express.static('public'));
+
 // request count resets on dynamo spin down, as intended
 let requestsCount = 0;
 
