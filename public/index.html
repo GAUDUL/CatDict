@@ -11,7 +11,7 @@
 
   <script>
     async function getFact() {
-      const res = await fetch('/');
+      const res = await fetch('/meowfacts');
       const data = await res.json();
       document.getElementById('fact').innerText = data.data;
     }
