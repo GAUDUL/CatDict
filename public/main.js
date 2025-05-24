@@ -22,15 +22,6 @@ async function getFact() {
   }
 }
 
-document.querySelectorAll(".lang-button").forEach(button => {
-  button.addEventListener("click", () => {
-    const langCode = button.dataset.lang;  // ex: "kor", "esp", "eng-us" 등
-    fetch(`/meowfacts?lang=${langCode}`)
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-        // 받아온 고양이 사실 데이터로 UI 업데이트
-      })
-      .catch(err => console.error(err));
-  });
-});
+async function goDict(){
+  window.location.href='/dict.html';
+}

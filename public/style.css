@@ -4,13 +4,35 @@ body {
   background-color: #fefefe;
 }
 
-button {
+.lang-button {
   padding: 10px 15px;
-  font-size: 16px;
+  font-size: 15px;
   cursor: pointer;
+  margin: 5px;
+  line-height: 1;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.dict-button{
+  padding: 10px 15px;
+  font-size: 15px;
+  cursor: pointer;
+  margin: 5px;
+  line-height: 1;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 #fact {
   margin-top: 20px;
+  margin-bottom: 100px;
+  min-height: 150px;
   font-style: italic;
 }
