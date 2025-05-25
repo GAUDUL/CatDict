@@ -1,4 +1,3 @@
-
 document.querySelectorAll(".lang-button").forEach(button => {
   button.addEventListener("click", () => {
     const langCode = button.dataset.lang;
@@ -8,6 +7,13 @@ document.querySelectorAll(".lang-button").forEach(button => {
         document.getElementById("fact").textContent = data?.data?.[0] || "No fact found.";
       })
       .catch(err => console.error(err));
+  });
+});
+
+document.querySelectorAll(".dict-lang").forEach(button => {
+  button.addEventListener("click", () => {
+    const langCode = button.dataset.lang;
+    window.location.href=`/dict?lang=${langCode}`;
   });
 });
 
@@ -23,5 +29,9 @@ async function getFact() {
 }
 
 async function goDict(){
-  window.location.href='/dict.html';
+  window.location.href='/dict';
+}
+
+async function goBack(){
+  window.location.href='/';
 }

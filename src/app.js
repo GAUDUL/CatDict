@@ -1,5 +1,6 @@
 const { convert, logger, format } = require("sst");
 const express = require("express");
+const path = require("path");
 const helmet = require("helmet");
 const bodyParser = require("body-parser");
 const pkjson = require("../package.json");
@@ -13,6 +14,15 @@ const {
 const app = express();
 
 app.use(express.static('public'));
+
+app.get('/dict', (req, res) => {
+  if(req.query.lang){
+    return res.sendFile(path.join(__dirname,'../public','dict.html'));
+  }
+  res.sendFile(path.join(__dirname, '../public', 'dictSet.html'));
+});
+
+
 
 // request count resets on dynamo spin down, as intended
 let requestsCount = 0;
