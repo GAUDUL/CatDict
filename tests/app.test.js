@@ -13,7 +13,7 @@ describe("Main", () => {
     it("it should have successful GET", (done) => {
       chai
         .request(app)
-        .get("/")
+        .get("/meowfacts/")
         .end((err, res) => {
           res.should.have.status(200);
           done();
@@ -25,7 +25,7 @@ describe("Main", () => {
     it("it should have successful GET", (done) => {
       chai
         .request(app)
-        .get("/options")
+        .get("/meowfacts/options")
         .end((err, res) => {
           res.should.have.status(200);
           done();
@@ -37,7 +37,7 @@ describe("Main", () => {
     it("it should have successful GET", (done) => {
       chai
         .request(app)
-        .get("/health")
+        .get("meowfacts/health")
         .end((err, res) => {
           res.should.have.status(200);
           done();
