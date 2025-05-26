@@ -11,7 +11,16 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function setupPagination() {
+  const prevButton = document.getElementById("prev-page");
   const nextButton = document.getElementById("next-page");
+  if(prevButton) {
+     prevButton.addEventListener("click", () => {
+      if(page > 0) {
+        page--
+        getDict();
+      }
+     })
+  }
   if (nextButton) {
     nextButton.addEventListener("click", () => {
       page++;
