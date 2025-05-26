@@ -1,3 +1,11 @@
+document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      window.location.href = "/";
+    }
+  });
+});
+
 document.querySelectorAll(".lang-button").forEach(button => {
   button.addEventListener("click", () => {
     const langCode = button.dataset.lang;

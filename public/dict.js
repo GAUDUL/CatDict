@@ -28,6 +28,19 @@ function setupPagination() {
       if(hasData) page = nextPage;
     });
   }
+
+  document.addEventListener("keydown", async (event) => {
+    if (event.key === "ArrowLeft" && page > 0) {
+      page--;
+      getDict(page);
+    } else if (event.key === "ArrowRight") {
+      const nextPage = page + 1;
+      const hasData = await getDict(nextPage);
+      if (hasData) page = nextPage;
+    } else if (event.key === "Escape") {
+      window.location.href = "/dict";
+    }
+  });
 }
 
 async function getDict(nextPage) {
