@@ -1,38 +1,93 @@
 body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  background-color: #fefefe;
+  background-color: #d6c1a8;
+  font-family: 'Gowun Dodum', 'Noto Sans KR', sans-serif;;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+h1{
+  font-weight: bold;
+  color:#fffaf0;
+  text-shadow: 
+    -2px -2px 0 #704c36,
+    -2px  0px 0 #704c36,
+    -2px  2px 0 #704c36,
+     0px -2px 0 #704c36,
+     0px  2px 0 #704c36,
+     2px -2px 0 #704c36,
+     2px  0px 0 #704c36,
+     2px  2px 0 #704c36;
 }
 
 .lang-button {
-  padding: 10px 15px;
-  font-size: 15px;
-  cursor: pointer;
-  margin: 5px;
   line-height: 1;
-  height: 40px;
+  height: 43px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+
+  background-color: #f0eddc;
+  border: 3px solid #be9175;
+  border-radius: 30px;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 1em;
+  font-family: 'Gowun Dodum';
+  cursor: pointer;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, background-color 0.3s;
 }
 
-.dict-button{
-    padding: 10px 15px;
-  font-size: 15px;
+.lang-button:hover {
+  background-color: #463022;
+  color: #f0eddc;
+  transform: scale(1.05);
+}
+
+.dict-button {
+  position: fixed;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 10px);
+  max-width: 700px;
+  height: 150px;
+  background-color: #463022;
+  color: white;
+  font-family: Georgia, serif;
+  font-size: 2.8em;
+  font-weight: bold;
+  text-align: center;
+  line-height: 90px;
   cursor: pointer;
-  margin: 5px;
-  line-height: 1;
-  height: 40px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
+  border-top: 8px solid #fffaf0;
+  border-right: 6px solid #d6d6d6;
+  border-left: 6px solid #31231a;
+  box-shadow: 0 -3px 8px rgba(0,0,0,0.3);
+  user-select: none;
+  background-position: 20px center;
+  background-size: 55px 55px;
+  transition: background-color 0.3s ease;
+}
+
+.dict-button:hover{
+  transform: translateX(-50%) scale(1.05);
 }
 
 #fact {
   margin-top: 20px;
   margin-bottom: 100px;
-  min-height: 150px;
-  font-style: italic;
+  min-height: 220px;
+  text-align: left;
+
+  background-color: #fdf0c2;
+  margin: 40px auto;
+  padding: 30px;
+  width: 70%;
+  border-radius: 12px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  font-size: 1.15em;
+  color: #2e2e2e;
 }
