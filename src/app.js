@@ -1,5 +1,6 @@
 const { convert, logger, format } = require("sst");
 const express = require("express");
+const path = require("path");
 const helmet = require("helmet");
 const bodyParser = require("body-parser");
 const pkjson = require("../package.json");
@@ -11,6 +12,17 @@ const {
 } = require("./middleware");
 
 const app = express();
+
+app.use(express.static('public'));
+
+app.get('/dict', (req, res) => {
+  if(req.query.lang){
+    return res.sendFile(path.join(__dirname,'../public','dict.html'));
+  }
+  res.sendFile(path.join(__dirname, '../public', 'dictSet.html'));
+});
+
+
 
 // request count resets on dynamo spin down, as intended
 let requestsCount = 0;
@@ -62,7 +74,7 @@ logger.info("turning on app...");
  * @param {Request} req - Express request object
  * @param {Response} res - Express response object
  */
-app.get("/", (req, res) => {
+app.get("/meowfacts", (req, res) => {
   requestsCount++;
   const lang = req.query.lang || null;
 
@@ -83,7 +95,7 @@ app.get("/", (req, res) => {
  * @param {Request} req - Express request object
  * @param {Response} res - Express response object
  */
-app.get("/options", (req, res) => {
+app.get("/meowfacts/options", (req, res) => {
   res.status(200).send({ lang: facts.getLanguages() });
 });
 
@@ -91,7 +103,7 @@ app.get("/options", (req, res) => {
  * @param {Request} req - Express request object
  * @param {Response} res - Express response object
  */
-app.get("/health", (req, res) => {
+app.get("/meowfacts/health", (req, res) => {
   requestsCount++;
   const time = process.uptime();
   const uptime = format.toDDHHMMSS(time + "");

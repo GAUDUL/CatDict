@@ -89,8 +89,8 @@ function invalidCountMiddleware(request, response, next) {
 }
 
 function invalidIDMiddleware(request, response, next) {
-  if (!request.query || !request.query.id || request.query.id.length != 0) {
-    next(); // no id specified, so continue
+  if (!request.query.id || request.query.id.length != 0) {
+    return next(); // no id specified, so continue
   }
 
   if (!validateCount(request.query.id, request.query.lang)) {
