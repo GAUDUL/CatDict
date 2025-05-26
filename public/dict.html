@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>Cat Dictionary</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dict.css">
 </head>
 <body>
-  <button class="dict-button" onclick="window.location.href='/dict'">돌아가기</button>
-  <h2>Facts</h2>
-  <div id="facts" class="facts-container"></div>
+  <div class="book">
+    <button class="back-button" onclick="window.location.href='/dict'">⬅</button>
+    <h2 style="color: #a47148;">Dictionary</h2>
+    <div id="facts" class="facts-container"></div>
 
-  <div>
-    <button id="prev-page">이전</button>
-    <button id="next-page">다음</button>
+    <div class="pagination-controls">
+      <button id="prev-page">⮜</button>
+      <button id="next-page">⮞</button>
+    </div>
   </div>
-
-
   <script src="dict.js"></script>
 </body>
 </html>
