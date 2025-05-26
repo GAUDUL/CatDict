@@ -37,7 +37,7 @@ describe("Main", () => {
     it("it should have successful GET", (done) => {
       chai
         .request(app)
-        .get("meowfacts/health")
+        .get("/meowfacts/health")
         .end((err, res) => {
           res.should.have.status(200);
           done();
